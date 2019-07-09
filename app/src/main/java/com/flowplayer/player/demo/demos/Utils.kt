@@ -1,6 +1,5 @@
 package com.flowplayer.player.demo.demos
 
-import android.os.Bundle
 import com.flowplayer.android.player.media.ad.AdBreak
 import com.flowplayer.android.player.media.video.ExternalVideo
 import com.flowplayer.android.player.media.video.FlowplayerVideo

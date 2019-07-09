@@ -21,7 +21,6 @@
         <activity
                 android:name=".demos.FlowplayerSupportFragmentXmlActivity"
                 android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
-
         <activity
                 android:name=".demos.FlowplayerViewActivity"
                 android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
