@@ -6,7 +6,7 @@ The latest SDK version is:
 
 [ ![Download](https://api.bintray.com/packages/flowplayer/maven/flowplayer-core/images/download.svg) ](https://bintray.com/flowplayer/maven/flowplayer-core/_latestVersion)
 
-Please make you have updated your access token inside the `AndroidManifest.xml`, in order to be able to play videos:
+Please make sure you have updated your access token inside the `AndroidManifest.xml`, in order to be able to play videos:
 ```
 <meta-data
     android:name="com.flowplayer.accessToken"
