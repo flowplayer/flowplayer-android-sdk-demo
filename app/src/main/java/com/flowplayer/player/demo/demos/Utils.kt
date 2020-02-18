@@ -1,9 +1,9 @@
 package com.flowplayer.player.demo.demos
 
+import com.flowplayer.android.player.media.ExternalMedia
+import com.flowplayer.android.player.media.FlowplayerMedia
+import com.flowplayer.android.player.media.Media
 import com.flowplayer.android.player.media.ad.AdBreak
-import com.flowplayer.android.player.media.video.ExternalVideo
-import com.flowplayer.android.player.media.video.FlowplayerVideo
-import com.flowplayer.android.player.media.video.Video
 import com.flowplayer.player.demo.Constants
 
 object Utils {
@@ -11,14 +11,14 @@ object Utils {
     /**
      * Utility method for creating a Video based on the media type.
      */
-    fun getVideo(mediaType: String?): Video? {
-        var video: Video? = null
+    fun getVideo(mediaType: String?): Media? {
+        var video: Media? = null
 
         when (mediaType) {
-            Constants.MEDIA_TYPE_FLOWPLAYER -> video = FlowplayerVideo(Constants.DEMO_MEDIA_ID, Constants.DEMO_PLAYER_ID)
-            Constants.MEDIA_TYPE_DASH -> video = ExternalVideo(Constants.DEMO_URL_DASH, Constants.DEMO_URL_VMAP)
-            Constants.MEDIA_TYPE_HLS -> video = ExternalVideo(Constants.DEMO_URL_HLS)
-            Constants.MEDIA_TYPE_MP4 -> video = ExternalVideo(Constants.DEMO_URL_MP4)
+            Constants.MEDIA_TYPE_FLOWPLAYER -> video = FlowplayerMedia(Constants.DEMO_MEDIA_ID, Constants.DEMO_PLAYER_ID)
+            Constants.MEDIA_TYPE_DASH -> video = ExternalMedia(Constants.DEMO_URL_DASH, Constants.DEMO_URL_VMAP)
+            Constants.MEDIA_TYPE_HLS -> video = ExternalMedia(Constants.DEMO_URL_HLS)
+            Constants.MEDIA_TYPE_MP4 -> video = ExternalMedia(Constants.DEMO_URL_MP4)
             Constants.MEDIA_TYPE_SS -> {
                 val preRollBreak = AdBreak(Constants.DEMO_URL_AD_PREROLL, AdBreak.Roll.PRE)
                 val midRollBreak = AdBreak(
@@ -30,7 +30,7 @@ object Utils {
                 )
                 val postRollBreak = AdBreak(Constants.DEMO_URL_AD_POSTROLL, AdBreak.Roll.POST)
 
-                video = ExternalVideo(Constants.DEMO_URL_SS, arrayListOf(preRollBreak, midRollBreak, postRollBreak))
+                video = ExternalMedia(Constants.DEMO_URL_SS, arrayListOf(preRollBreak, midRollBreak, postRollBreak))
             }
         }
 

@@ -1,13 +1,10 @@
 package com.flowplayer.player.demo.demos
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.flowplayer.android.player.FlowplayerSupportFragment
-import com.flowplayer.android.player.event.*
-import com.flowplayer.android.player.event.listener.*
-import com.flowplayer.android.player.media.video.ExternalVideo
-import com.flowplayer.android.player.media.video.FlowplayerVideo
+import com.flowplayer.android.player.media.ExternalMedia
+import com.flowplayer.android.player.media.FlowplayerMedia
 import com.flowplayer.player.demo.Constants
 import com.flowplayer.player.demo.R
 
@@ -29,8 +26,8 @@ class FlowplayerSupportFragmentActivity : AppCompatActivity(){
         // Create Video object and start player
         val video = Utils.getVideo(intent.extras?.getString(Constants.EXTRA_MEDIA_TYPE))
         when(video){
-            is FlowplayerVideo -> playerFragment.getPlayer().prepare(video, true)
-            is ExternalVideo -> playerFragment.getPlayer().prepare(video, true)
+            is FlowplayerMedia -> playerFragment.getPlayer().prepare(video, true)
+            is ExternalMedia -> playerFragment.getPlayer().prepare(video, true)
         }
     }
 }
