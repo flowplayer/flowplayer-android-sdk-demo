@@ -7,6 +7,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.flowplayer.android.chromecast.ChromecastManager
 import com.flowplayer.player.demo.demos.*
 
 
@@ -22,13 +23,16 @@ class MainActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener {
         items.add(Item("FlowplayerView AppCompatActivity", "A FlowplayerView inside an AppCompatActivity", Intent(this, FlowplayerViewAppCompatActivity::class.java)))
         items.add(Item("FlowplayerSupportFragment AppCompatActivity", "A FlowplayerSupportFragment added programmatically inside an AppCompatActivity", Intent(this, FlowplayerSupportFragmentActivity::class.java)))
         items.add(Item("FlowplayerSupportFragment XML AppCompatActivity", "A FlowplayerSupportFragment added via XML inside an AppCompatActivity", Intent(this, FlowplayerSupportFragmentXmlActivity::class.java)))
+        items.add(Item("FlowplayerChromecastFragment Activity", "A FlowplayerSupportFragment which cast to a connected Chromecast device", Intent(this, FlowplayerChromecastFragmentActivity::class.java)))
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.adapter = ItemAdapter(items, this)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_activity_main, menu)
+        ChromecastManager.getInstance().setMediaRouteButton(this, menu, R.id.media_route_menu_item)
+
         return true
     }
 

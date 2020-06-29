@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.flowplayer.player.demo">
+<manifest package="com.flowplayer.player.demo"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+        android:name=".DemoApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,21 +17,27 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".demos.FlowplayerSupportFragmentActivity"
-                android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+            android:name=".demos.FlowplayerSupportFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
         <activity
-                android:name=".demos.FlowplayerSupportFragmentXmlActivity"
-                android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+            android:name=".demos.FlowplayerSupportFragmentXmlActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
         <activity
-                android:name=".demos.FlowplayerViewActivity"
-                android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+            android:name=".demos.FlowplayerViewActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
         <activity
-                android:name=".demos.FlowplayerViewAppCompatActivity"
-                android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+            android:name=".demos.FlowplayerViewAppCompatActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".demos.FlowplayerChromecastFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
 
         <meta-data
-                android:name="com.flowplayer.accessToken"
-                android:value="YOU_ACCESS_TOKEN"/>
+            android:name="com.flowplayer.accessToken"
+            android:value="YOU_ACCESS_TOKEN" />
 
+        <meta-data
+            android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+            android:value="com.flowplayer.android.chromecast.ChromecastOptionsProvider" />
     </application>
 </manifest>
