@@ -6,9 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.flowplayer.android.chromecast.ChromecastManager
 import com.flowplayer.android.chromecast.player.ChromecastPlayer
 import com.flowplayer.android.player.FlowplayerSupportFragment
-import com.flowplayer.android.player.media.ExternalMedia
-import com.flowplayer.android.player.media.FlowplayerMedia
-import com.flowplayer.player.demo.Constants
 import com.flowplayer.player.demo.R
 
 
@@ -26,15 +23,13 @@ class FlowplayerChromecastFragmentActivity : AppCompatActivity(){
         // When adding the fragment programmatically, we have to execute all pending transactions if we want to immediately get the instance of the PlayerView.
         supportFragmentManager.executePendingTransactions()
 
-        // Create Video object and start player
-        val video = Utils.getVideo(intent.extras?.getString(Constants.EXTRA_MEDIA_TYPE))
-        when(video){
-            is FlowplayerMedia -> playerFragment.getPlayer().prepare(video, true)
-            is ExternalMedia -> playerFragment.getPlayer().prepare(video, true)
-        }
+        PlayerHelper.initializePlayer(playerFragment.getPlayer(), intent.extras)
+
 
         // Initialize Chromecast player
         val chromecastMediaPlayer = ChromecastPlayer.getInstance(this)
+        //You can also use Mini and Expanded Controllers, of google's Cast UX Widgets, for controlling playback, when media is casted, instead of a controlView.
+        //Check subsection "Control playback using Mini and Expanded Controllers" of developer's guide for more details.
         chromecastMediaPlayer.setControlView(findViewById(R.id.cast_control_view))
 
         // Pass the chromecast player to the player

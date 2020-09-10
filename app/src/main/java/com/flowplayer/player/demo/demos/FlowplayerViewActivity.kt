@@ -4,9 +4,6 @@ import android.app.Activity
 import android.content.res.Configuration
 import android.os.Bundle
 import com.flowplayer.android.player.FlowplayerView
-import com.flowplayer.android.player.media.ExternalMedia
-import com.flowplayer.android.player.media.FlowplayerMedia
-import com.flowplayer.player.demo.Constants
 import com.flowplayer.player.demo.R
 
 
@@ -18,13 +15,7 @@ class FlowplayerViewActivity : Activity() {
         setContentView(R.layout.activity_flowplayer_view)
 
         flowplayerView = findViewById(R.id.player_view)
-
-        // Create Video object and start player
-        val video = Utils.getVideo(intent.extras?.getString(Constants.EXTRA_MEDIA_TYPE))
-        when(video){
-            is FlowplayerMedia -> flowplayerView.prepare(video, true)
-            is ExternalMedia -> flowplayerView.prepare(video, true)
-        }
+        PlayerHelper.initializePlayer(flowplayerView, intent.extras)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {

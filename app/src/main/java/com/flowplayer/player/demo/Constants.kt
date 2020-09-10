@@ -13,7 +13,7 @@ object Constants {
     const val DEMO_PLAYER_ID = "ac6dea7c-acf1-472a-bdab-efdd85f092f1"
     const val DEMO_URL_DASH = "https://edge.flowplayer.org/drive.mpd"
     const val DEMO_URL_SS = "https://playready.directtaps.net/smoothstreaming/SSWSS720H264/SuperSpeedway_720.ism"
-    const val DEMO_URL_HLS = "https://edge.flowplayer.org/drive.m3u8"
+    const val DEMO_URL_HLS = "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8"
     const val DEMO_URL_MP4 = "https://edge.flowplayer.org/drive.mp4"
     const val DEMO_URL_VMAP = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpremidpostpod&cmsid=496&vid=short_onecue&correlator="
     const val DEMO_URL_AD_PREROLL = "https://pubads.g.doubleclick.net/gampad/ads?slotname=/124319096/external/ad_rule_samples&sz=640x480&ciu_szs=300x250&unviewed_position_start=1&output=xml_vast3&impl=s&env=vp&gdfp_req=1&ad_rule=0&vad_type=linear&vpos=preroll&pod=1&ppos=1&lip=true&min_ad_duration=0&max_ad_duration=30000&vrid=6376&cust_params=deployment%3Ddevsite%26sample_ar%3Dpremidpostpod&url=&video_doc_id=short_onecue&cmsid=496&kfa=0&tfcd=0"
