@@ -16,6 +16,7 @@ object PlayerHelper {
         val config = PlayerControlConfig.Builder()
                 .setMuteControl(true)
                 .enablePlugins(arrayOf("speed", "subtitles", "qsel", "asel", "analytics"))
+                .setControlUrl("https://fp-eu-w1-nnarhinen.s3-eu-west-1.amazonaws.com/sdk-controls/custom.html?token=[TOKEN]&[CONFIG]&volume=[VOLUME]")
                 .setCustom("speed.options", arrayOf(0.5, 1, 2, 5))
                 .setCustom("speed.labels", arrayOf("Slow", "Normal", "Double", "Fast"))
                 .build()
