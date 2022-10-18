@@ -2,6 +2,9 @@
 <manifest package="com.flowplayer.player.demo"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".DemoApplication"
         android:allowBackup="true"
@@ -32,6 +35,14 @@
         <activity
             android:name=".demos.FlowplayerChromecastFragmentActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".demos.ActivityWithFloatingPlayer"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+
+        <service
+            android:name=".service.FloatingPlayerService"
+            android:enabled="true"
+            android:exported="false" />
 
         <meta-data
             android:name="com.flowplayer.accessToken"
