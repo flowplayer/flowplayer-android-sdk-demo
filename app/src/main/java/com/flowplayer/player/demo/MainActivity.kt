@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item?.itemId == R.id.item_settings) {
             showMediaTypeDialog()
             return true
