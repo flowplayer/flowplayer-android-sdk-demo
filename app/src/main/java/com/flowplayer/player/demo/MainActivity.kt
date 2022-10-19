@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener {
         items.add(Item("FlowplayerSupportFragment AppCompatActivity", "A FlowplayerSupportFragment added programmatically inside an AppCompatActivity", Intent(this, FlowplayerSupportFragmentActivity::class.java)))
         items.add(Item("FlowplayerSupportFragment XML AppCompatActivity", "A FlowplayerSupportFragment added via XML inside an AppCompatActivity", Intent(this, FlowplayerSupportFragmentXmlActivity::class.java)))
         items.add(Item("FlowplayerChromecastFragment Activity", "A FlowplayerSupportFragment which cast to a connected Chromecast device", Intent(this, FlowplayerChromecastFragmentActivity::class.java)))
-        items.add(Item("ActivityWithFloatingPlayer", "An example of how to create a floating player", Intent(this, ActivityWithFloatingPlayer::class.java)))
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.adapter = ItemAdapter(items, this)
