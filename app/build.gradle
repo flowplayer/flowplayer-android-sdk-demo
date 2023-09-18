@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 
 android {
     defaultConfig {
-        applicationId "com.flowplayer.flexoplayerdemo"
+        applicationId "com.flowplayer.demo"
         minSdkVersion 19
         compileSdk 33
         targetSdkVersion 33
