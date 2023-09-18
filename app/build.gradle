@@ -54,7 +54,7 @@ dependencies {
     implementation libs.androidx.recyclerview
     implementation libs.androidx.multidex
     implementation libs.flowplayer
-    debugImplementation libs.androidx.espresso.idlingResources
+    implementation libs.androidx.espresso.idlingResources
 
     androidTestImplementation libs.androidx.test.core
     androidTestImplementation libs.androidx.test.runner
