@@ -1,4 +1,4 @@
-package com.flowplayer.player.demo
+package com.flowplayer.demo
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,14 +6,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-
-class ItemAdapter(private val items: ArrayList<Item>, private val listener: OnItemClickListener) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
+class ItemAdapter(private val items: ArrayList<Item>, private val listener: OnItemClickListener) :
+    RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
     interface OnItemClickListener {
         fun onItemClicked(item: Item)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_main_list, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_main_list, parent, false)
         return ItemViewHolder(view)
     }
 
@@ -25,9 +26,7 @@ class ItemAdapter(private val items: ArrayList<Item>, private val listener: OnIt
         holder.titleView.text = items[position].title
         holder.subtitleView.text = items[position].subtitle
 
-        holder.itemView.setOnClickListener {
-            listener.onItemClicked(items[position])
-        }
+        holder.itemView.setOnClickListener { listener.onItemClicked(items[position]) }
     }
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
