@@ -3,9 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
-        android:id="@+id/player_fragment"
-        class="com.flowplayer.android.player.FlowplayerSupportFragment"
+    <FrameLayout
+        android:id="@+id/player_holder"
         android:layout_width="match_parent"
         android:layout_height="220dp" />
 </RelativeLayout>

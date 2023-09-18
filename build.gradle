@@ -1,28 +1,34 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
-    ext.kotlin_version = '1.3.31'
     repositories {
         google()
-        jcenter()
         mavenCentral()
+        maven { url 'https://storage.googleapis.com/r8-releases/raw' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath libs.gradlePlugin.r8
+        classpath libs.gradlePlugin.android
+        classpath libs.gradlePlugin.kotlin
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
+plugins {
+    alias(libs.plugins.spotless)
+}
+
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/comflowplayer-1026" }
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+spotless {
+    kotlin {
+        target("**/*.kt", "**/*.kts")
+        ktfmt(libs.versions.ktfmt.get()).dropboxStyle()
+    }
 }

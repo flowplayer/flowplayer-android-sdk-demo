@@ -1,11 +1,11 @@
-package com.flowplayer.player.demo.demos
+package com.flowplayer.demo.activity
 
 import android.app.Activity
+import android.app.PendingIntent
 import android.content.res.Configuration
 import android.os.Bundle
 import com.flowplayer.android.player.FlowplayerView
-import com.flowplayer.player.demo.R
-
+import com.flowplayer.demo.R
 
 class FlowplayerViewActivity : Activity() {
     private lateinit var flowplayerView: FlowplayerView
@@ -15,22 +15,23 @@ class FlowplayerViewActivity : Activity() {
         setContentView(R.layout.activity_flowplayer_view)
 
         flowplayerView = findViewById(R.id.player_view)
-        PlayerHelper.initializePlayer(flowplayerView, intent.extras)
+        PlayerHelper.initializePlayer(flowplayerView.flowplayer, intent.extras)
+
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+        flowplayerView.flowplayer.setMediaNotificationTapIntent(pendingIntent)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            flowplayerView.setFullscreen(true)
+            flowplayerView.flowplayer.setFullscreen(true)
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            flowplayerView.setFullscreen(false)
+            flowplayerView.flowplayer.setFullscreen(false)
         }
     }
 
     override fun onStart() {
         super.onStart()
-        // Unlike AppCompatActivity, this activity doesn't implement LifecycleOwner
-        // and therefore we need to manually call the player's lifecycle methods.
         flowplayerView.onStart()
     }
 
