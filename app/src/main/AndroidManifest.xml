@@ -40,7 +40,7 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
         <activity
             android:name=".activity.FlowplayerSupportFragmentPiPActivity"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
             android:supportsPictureInPicture="true"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"
             tools:targetApi="26" />
