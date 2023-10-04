@@ -22,7 +22,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://oss.sonatype.org/content/repositories/comflowplayer-1028" }
+        maven { url "https://oss.sonatype.org/content/repositories/comflowplayer-1029" }
     }
 }
 

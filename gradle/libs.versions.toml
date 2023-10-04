@@ -1,5 +1,5 @@
 [versions]
-flowplayer = "2.0.0-rc.2"
+flowplayer = "2.0.0-rc.3"
 kotlin = "1.9.10"
 
 androidx-media3 = "1.1.0"

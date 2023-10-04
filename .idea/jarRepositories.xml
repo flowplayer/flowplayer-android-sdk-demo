@@ -46,5 +46,10 @@
       <option name="name" value="maven" />
       <option name="url" value="https://oss.sonatype.org/content/repositories/comflowplayer-1028" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://oss.sonatype.org/content/repositories/comflowplayer-1029" />
+    </remote-repository>
   </component>
 </project>
