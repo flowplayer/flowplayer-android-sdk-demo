@@ -14,7 +14,7 @@ object PlayerHelper {
         val config =
             PlayerControlConfig.Builder()
                 .setMuteControl(true)
-                .enablePlugins(arrayOf("speed", "subtitles", "qsel", "asel", "analytics"))
+                .enablePlugins(arrayOf("speed", "subtitles", "qsel", "asel"))
                 .setCustom("speed.options", arrayOf(0.5, 1, 2, 5))
                 .setCustom("speed.labels", arrayOf("Slow", "Normal", "Double", "Fast"))
                 .build()
