@@ -2,6 +2,7 @@ package com.flowplayer.demo.activity
 
 import android.app.PendingIntent
 import android.app.PictureInPictureParams
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.trackPipAnimationHintView
@@ -22,18 +23,31 @@ class FlowplayerSupportFragmentPiPActivity : AppCompatActivity() {
 
         playerFragment = FlowplayerSupportFragment.newInstance()
         supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.player_holder, playerFragment)
-            .commitNow()
+                .beginTransaction()
+                .replace(R.id.player_holder, playerFragment)
+                .commitNow()
 
         flowplayer = playerFragment.getPlayer()
-        PlayerHelper.initializePlayer(flowplayer, intent.extras)
         flowplayer.setShouldPauseOnBackground(false)
+        setupPiP()
+        initializePlayer(intent)
+    }
 
+    /**
+     * This is a SingleInstance activity, which is a good pattern to adopt when dealing with PiP
+     * activities. Here we need to ensure that we properly process the new intents as they are
+     * received by the Activity, for example when a new media is selected in the demo app while this
+     * activity is in the background.
+     */
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        initializePlayer(intent)
+    }
+
+    private fun initializePlayer(intent: Intent) {
+        PlayerHelper.initializePlayer(flowplayer, intent.extras)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
         flowplayer.setMediaNotificationTapIntent(pendingIntent)
-
-        setupPiP()
     }
 
     /**
@@ -42,7 +56,7 @@ class FlowplayerSupportFragmentPiPActivity : AppCompatActivity() {
      */
     override fun onUserLeaveHint() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S &&
-            Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val params = PictureInPictureParams.Builder().build()
             enterPictureInPictureMode(params)
         }
