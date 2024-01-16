@@ -1,6 +1,6 @@
 # About
 
-In this repository, you can find sample applications demonstrating how to integrate the Wowza Flowplayer into your Android projects using our Android SDK. The latest version of the SDK is v2.2.0. For additional information and our official documentation, see the following links:
+In this repository, you can find sample applications demonstrating how to integrate the Wowza Flowplayer into your Android projects using our Android SDK. For the latest release version, see [Maven Central](https://mvnrepository.com/artifact/com.flowplayer.android.player/flowplayer). You can find our official documentation at the following links:
 
 * [About the Android SDK](https://developer.wowza.com/docs/wowza-flowplayer/android-sdk/about-the-android-sdk/)
 * [Get started](https://developer.wowza.com/docs/wowza-flowplayer/android-sdk/get-started-with-the-android-sdk/)
