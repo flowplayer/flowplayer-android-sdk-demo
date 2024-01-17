@@ -1,11 +1,11 @@
 [versions]
-flowplayer = "2.1.0"
+flowplayer = "2.2.0"
 kotlin = "1.9.10"
 
-androidx-media3 = "1.1.0"
 androidx-app-compat = "1.6.1"
-androidx-recyclerview = "1.3.1"
+androidx-recyclerview = "1.3.2"
 androidx-multidex = "2.0.1"
+activity-ktx = "1.8.2"
 
 spotless = "6.21.0"
 ktfmt = "0.44"
@@ -22,13 +22,14 @@ spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 
 [libraries]
 flowplayer = { module = "com.flowplayer.android.player:flowplayer", version.ref = "flowplayer" }
-gradlePlugin-r8 = "com.android.tools:r8:8.1.56"
-gradlePlugin-android = "com.android.tools.build:gradle:8.1.1"
+gradlePlugin-r8 = "com.android.tools:r8:8.2.42"
+gradlePlugin-android = "com.android.tools.build:gradle:8.1.4"
 gradlePlugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-app-compat" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "androidx-recyclerview" }
 androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "androidx-multidex" }
+androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity-ktx" }
 
 androidx-espresso-web = { module = "androidx.test.espresso:espresso-web", version.ref = "espresso" }
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
