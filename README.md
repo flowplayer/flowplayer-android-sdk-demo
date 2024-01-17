@@ -1,6 +1,6 @@
 # About
 
-In this repository, you can find sample applications that demonstrate how to integrate the Wowza Flowplayer into your Android projects using our Android SDK. The latest version of the SDK is v2.0. For additional information and our official documentation, see the following links:
+In this repository, you can find sample applications demonstrating how to integrate the Wowza Flowplayer into your Android projects using our Android SDK. For the latest release version, see [Maven Central](https://mvnrepository.com/artifact/com.flowplayer.android.player/flowplayer). You can find our official documentation at the following links:
 
 * [About the Android SDK](https://developer.wowza.com/docs/wowza-flowplayer/android-sdk/about-the-android-sdk/)
 * [Get started](https://developer.wowza.com/docs/wowza-flowplayer/android-sdk/get-started-with-the-android-sdk/)
@@ -13,7 +13,7 @@ In this repository, you can find sample applications that demonstrate how to int
 
 ## Before you start
 
-We assume you understand Android development and are familiar with Android Studio and Gradle. To work with the Android SDK, install Android Studio Giraffe. You can use other tools to build your application, but we rely on Android Studio to demonstrate how to work with the demo application.
+We assume you understand Android development and are familiar with Android Studio and Gradle. To work with the Android SDK, install Android Studio. You can use other tools to build your application, but we rely on Android Studio to demonstrate how to work with the demo application.
 
 ## Run the demo application
 
