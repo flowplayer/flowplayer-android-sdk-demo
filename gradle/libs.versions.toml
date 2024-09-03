@@ -1,5 +1,5 @@
 [versions]
-flowplayer = "2.2.0"
+flowplayer = "2.2.2"
 kotlin = "1.9.10"
 
 androidx-app-compat = "1.6.1"
